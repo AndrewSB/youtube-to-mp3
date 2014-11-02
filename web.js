@@ -16,6 +16,8 @@
 
   qs = require('querystring');
 
+  multer = require('multer');
+
   app = express();
 
   server = http.createServer(app);

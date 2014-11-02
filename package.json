@@ -1,21 +1,22 @@
 {
   "name": "yt2mp3",
   "version": "0.0.1",
-  
+
   "repository": {
   "type": "git",
   "url": "git://github.com/AndrewSB/youtube-to-mp3.git"
   },
-  
+
   "dependencies": {
     "coffee-script": "*",
     "express": "*",
     "jade": "*",
     "fluent-ffmpeg": "*",
     "nodemon": "*",
-    "ytdl": "*"
+    "ytdl": "*",
+    "multer": "*"
   },
   "engines": {
-    "node": "*"  
+    "node": "*"
  }
 }
