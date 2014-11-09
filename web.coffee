@@ -66,7 +66,7 @@ app.get '/convert', (req, res) ->
 convert_and_send = (pathToMovie, res, videoId) ->
   console.log "converting"
   new ffmpeg(pathToMovie + "/video.mp4")
-    .setFfmpegPath(__dirname + "/ffmpeg")
+    #.setFfmpegPath(__dirname + "/ffmpeg")
     .audioCodec('libmp3lame')
     .format('mp3')
     .on 'end', () ->
