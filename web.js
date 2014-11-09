@@ -16,13 +16,11 @@
 
   qs = require('querystring');
 
-  multer = require('multer');
-
   app = express();
 
   server = http.createServer(app);
 
-  app.set(function() {
+  app.configure(function() {
     app.set('port', process.env.PORT || 3000);
     app.set('views', "" + __dirname + "/views");
     return app.set('view engine', 'jade');
@@ -76,6 +74,7 @@
       } else {
         console.log("downloading and converting");
         file = fs.createWriteStream(pathToMovie);
+        console.log("lol" + file);
         ytdl(req.query.url).pipe(file);
         return file.on('close', function() {
           return convert_and_send(pathToMovie, res);

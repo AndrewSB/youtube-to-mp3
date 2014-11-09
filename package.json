@@ -14,7 +14,8 @@
     "fluent-ffmpeg": "*",
     "nodemon": "*",
     "ytdl": "*",
-    "multer": "*"
+    "multer": "*",
+    "mkdirp": "*"
   },
   "engines": {
     "node": "*"
