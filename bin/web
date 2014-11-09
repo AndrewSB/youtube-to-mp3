@@ -6,5 +6,5 @@ PATH="node_modules/.bin:$PATH"
 if [ "${NODE_ENV}" == "production" ]; then
   exec coffee web.coffee
 else
-  exec nodemon -w . web.coffee
+  exec node -w . web.coffee
 fi

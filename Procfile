@@ -1,1 +1,1 @@
-web: bin/web
+web: coffee web.coffee
