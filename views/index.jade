@@ -1,3 +1,40 @@
-extends layout
-block content
-  h1 Enter a URL to start
+doctype html 5
+html(lang="en")
+  head
+    title= pageTitle
+    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script.
+      $(document).ready(function() {
+        $("#mainForm").submit(function(e){
+          e.preventDefault();
+          $.ajax({
+            method: "GET",
+            url: "/convert",
+            data: $(this).serialize(),
+            success: function(result) {
+              console.log(result)
+              $("#downloadLink").attr("href", result)
+              var newHTML = "<audio controls><source src='"+result+"'></source> Your browser does not support the audio element</audio>";
+              $("#audioP").html(newHTML)
+             }
+          })
+        });
+      });
+
+  body
+    h1 YouTube -> MP3
+    #container
+      form(id="mainForm")
+        input(type="text_field" name="url" size="75" value=yt_url)
+        input(type="submit" value="Convert")
+      hr
+      h1 Enter a URL to start
+      h1
+        = title
+      p
+        img(src = thumb)
+
+      p(id="audioP")
+
+      p
+        a(id="downloadLink") Download MP3
