@@ -35,7 +35,7 @@ app.get '/', (req, res)     ->
 
 app.get '/convert', (req, res) ->
   res.contentType('mp3')
-  url = req.query.url
+  url = "http://www.youtube.com/watch?v=" + req.query.url
   console.log url
   ytdl.getInfo url, (err, info) ->
     if err?
