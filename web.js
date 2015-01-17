@@ -75,7 +75,7 @@
 
   convert_and_send = function(pathToMovie, res, videoId) {
     console.log("converting");
-    return new ffmpeg(pathToMovie + "/video.mp4").audioCodec('libmp3lame').format('mp3').on('end', function() {
+    return new ffmpeg(pathToMovie + "/video.mp4").setFfmpegPath(__dirname + "/ffmpeg").audioCodec('libmp3lame').format('mp3').on('end', function() {
       console.log("end");
       return res.status(200).send("/tmp/" + videoId + "/music.mp3");
     }).saveToFile(pathToMovie + "/music.mp3", {
