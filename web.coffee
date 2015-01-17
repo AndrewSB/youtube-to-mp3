@@ -73,3 +73,6 @@ convert_and_send = (pathToMovie, res, videoId) ->
       console.log "end"
       res.send 200, "/tmp/#{videoId}/music.mp3"
     .saveToFile pathToMovie + "/music.mp3", {end: true}
+
+writeToFile = (name) ->
+  fs.appendFile('log.txt', name)
