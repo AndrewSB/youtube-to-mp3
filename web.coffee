@@ -71,7 +71,8 @@ convert_and_send = (pathToMovie, res, videoId) ->
     .format('mp3')
     .on 'end', () ->
       console.log "end"
-      res.send 200, "/tmp/#{videoId}/music.mp3"
+      res.status 200
+      .send "/tmp/#{videoId}/music.mp3"
     .saveToFile pathToMovie + "/music.mp3", {end: true}
 
 writeToFile = (name) ->

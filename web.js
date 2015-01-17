@@ -77,7 +77,7 @@
     console.log("converting");
     return new ffmpeg(pathToMovie + "/video.mp4").audioCodec('libmp3lame').format('mp3').on('end', function() {
       console.log("end");
-      return res.send(200, "/tmp/" + videoId + "/music.mp3");
+      return res.status(200).send("/tmp/" + videoId + "/music.mp3");
     }).saveToFile(pathToMovie + "/music.mp3", {
       end: true
     });
