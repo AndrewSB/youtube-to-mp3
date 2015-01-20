@@ -10,4 +10,4 @@ Currently the API is set to just return a link to the mp3 downloaded, but if you
 ## Installation
 1. `git clone` or download this repository to your machine
 2. run `npm install` to get all of the dependencies (except ffmpeg, you'll need to install ffmpeg on your machine using some other installer)
-3. run `node web.js` to start the server. You can now go to `http://localhost:3000` to see a demo or use an http request to the `/covert` endpoint for programmatic acess
+3. run `node web.js` to start the server. You can now go to `http://localhost:3000` to see a demo or use an http request to the `/covert` endpoint for programmatic access
